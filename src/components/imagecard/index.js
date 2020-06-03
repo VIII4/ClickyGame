@@ -2,25 +2,26 @@ import React, { Component } from "react";
 import "./style.css";
 
 class ImageCard extends Component {
+  state = {
+    mouseOver: false,
+  };
   //Method to call when card is clicked
-  handleClickEvent = (event) => {
-    //evaluate if isclicked? reset game: change state to clicked
-    //event.preventDefault();
-    if (!this.clicked) {
-      this.setState({
-        clicked: true,
-      });
-      //   Add Score
-    } else {
-    }
+  handleMouseOver = (event) => {
+    this.setState({ mouseOver: true });
+    console.log(this.state);
+  };
 
-    console.log(this.state.clicked);
+  handleMouseExit = (event) => {
+    this.setState({ mouseOver: false });
+    console.log(this.state);
   };
 
   render() {
+    let className = "card-img card-img-cstm";
+    className += this.state.mouseOver === true ? " animated tada" : "";
     return (
       <div className="col mb-4">
-        <div className="card ">
+        <div className="card text-center">
           <a
             href="#!"
             id={this.props.id}
@@ -28,14 +29,18 @@ class ImageCard extends Component {
             onClick={this.props.handleClick}
           >
             <img
-              className="card-img card-img-cstm"
+              className={className}
               src={this.props.image}
               alt="?"
+              onMouseOver={this.handleMouseOver}
+              onMouseLeave={this.handleMouseExit}
             />
             <div
               className="card-img-overlay rgba-white-slight"
               id={this.props.id}
               name={this.props.name}
+              onMouseOver={this.handleMouseOver}
+              onMouseLeave={this.handleMouseExit}
             ></div>
           </a>
         </div>

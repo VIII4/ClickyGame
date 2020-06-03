@@ -29,6 +29,12 @@ class CardDeckContainer extends React.Component {
 
   updateScore = () => {
     let newScore = this.state.score + 1;
+    if (newScore >= 12) {
+      alert("You Win, Try again");
+      this.resetScore();
+      this.resetData();
+      return;
+    }
     this.setState({
       score: newScore,
       highScore:
@@ -96,7 +102,7 @@ class CardDeckContainer extends React.Component {
           highScore={this.state.highScore}
         ></ScoreBoard>
         {/* Card Deck */}
-        <div className="row my-3 row-cols-1 row-cols-md-4">
+        <div className="row my-3 row-cols-2 row-cols-md-4">
           {this.shuffleCards()}
         </div>
       </>

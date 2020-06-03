@@ -3,7 +3,7 @@ import "./style.css";
 
 let Navbar = function (props) {
   return (
-    <nav className="navbar navbar-light blue lighten-4">
+    <nav className="navbar navbar-dark info-color-dark">
       <span className="navbar-brand">{props.title}</span>
     </nav>
   );
