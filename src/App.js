@@ -9,7 +9,7 @@ import CardDeck from "./components/carddeck";
 function App() {
   return (
     <>
-      <Navbar title="Smashy Clicky Memory Game"></Navbar>
+      <Navbar title="Memory Game"></Navbar>
       <div className="container mt-3 p-3">
         <CardDeck></CardDeck>
       </div>
@@ -18,3 +18,6 @@ function App() {
 }
 
 export default App;
+
+// View - container
+//Overlay

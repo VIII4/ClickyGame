@@ -4,6 +4,7 @@ import cardData from "../../data/images.json";
 import Utility from "../../utility";
 import ImageCard from "../imagecard";
 import ScoreBoard from "../scoreBoard";
+import MessageOverlay from "../messageOverlay";
 
 class CardDeckContainer extends React.Component {
   state = {
@@ -71,8 +72,6 @@ class CardDeckContainer extends React.Component {
   handleCardClick = (event) => {
     event.preventDefault();
     let name = event.target.getAttribute("name");
-
-    console.log(event.target.id);
     //Get index of Image data
     let index = this.state.data.findIndex((element) => element.name === name);
 
@@ -101,10 +100,14 @@ class CardDeckContainer extends React.Component {
           score={this.state.score}
           highScore={this.state.highScore}
         ></ScoreBoard>
+
         {/* Card Deck */}
         <div className="row my-3 row-cols-2 row-cols-md-4">
           {this.shuffleCards()}
         </div>
+
+        {/* Overlay */}
+        {/* <MessageOverlay></MessageOverlay> */}
       </>
     );
   }

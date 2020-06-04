@@ -17,6 +17,6 @@
   }
 }
 
-.card-img-overlay:hover {
+.card:hover {
   box-shadow: 0 0 20px #0099cc;
 }
