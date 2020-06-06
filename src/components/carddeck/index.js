@@ -4,7 +4,7 @@ import cardData from "../../data/images.json";
 import Utility from "../../utility";
 import ImageCard from "../imagecard";
 import ScoreBoard from "../scoreBoard";
-import MessageOverlay from "../messageOverlay";
+//import MessageOverlay from "../messageOverlay";
 
 class CardDeckContainer extends React.Component {
   state = {
